@@ -1,0 +1,67 @@
+import React from 'react';
+import './TechnologyStack.css';
+
+const TechnologyStack = () => {
+  return (
+    <div className="technology-stack">
+      <div className="container">
+        <h1 className="section-title">Core Technology Stack</h1>
+        <p className="section-description">
+          The Neurocortex platform is built upon and deeply integrated with NVIDIA's end-to-end robotics platform.
+        </p>
+        
+        <div className="technology-grid">
+          <div className="tech-card">
+            <div className="card-image-container">
+              <img src="/images/Jetson thor.png" alt="NVIDIA Jetson Thor" className="card-image" />
+            </div>
+            <div className="card-content">
+              <h2 className="card-title">NVIDIA Jetson Thor</h2>
+              <p className="card-description">
+                Provides the high-performance, onboard compute necessary to run the entire Neurocortex stack in real-time.
+              </p>
+            </div>
+          </div>
+
+          <div className="tech-card">
+            <div className="card-image-container">
+              <img src="/images/isaacsim.png" alt="NVIDIA Isaac Sim / Omniverse" className="card-image" />
+            </div>
+            <div className="card-content">
+              <h2 className="card-title">NVIDIA Isaac Sim / Omniverse</h2>
+              <p className="card-description">
+                Used extensively for training the Cognitive Engine's learning models in a physically accurate and scalable virtual environment.
+              </p>
+            </div>
+          </div>
+
+          <div className="tech-card">
+            <div className="card-image-container">
+              <img src="/images/isaacperceptor.png" alt="NVIDIA Isaac Perceptor" className="card-image" />
+            </div>
+            <div className="card-content">
+              <h2 className="card-title">NVIDIA Isaac Perceptor</h2>
+              <p className="card-description">
+                Provides foundational libraries for 3D perception, sensor fusion, and SLAM, leveraged by the Perception Engine.
+              </p>
+            </div>
+          </div>
+
+          <div className="tech-card">
+            <div className="card-image-container">
+              <img src="/images/icon-2.png" alt="Project Gr00t Foundation Model" className="card-image" />
+            </div>
+            <div className="card-content">
+              <h2 className="card-title">Project Gr00t Foundation Model</h2>
+              <p className="card-description">
+                Provides the baseline motor skills and physical interaction capabilities upon which the Action Generation Engine builds.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TechnologyStack; 
