@@ -12,23 +12,104 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 4rem 0;
+  margin: -2rem 0;
   position: relative;
   z-index: 1;
+  min-height: 400px;
 }
 
-.main-graphic {
+/* Ana infinity container */
+.infinity-container {
+  position: relative;
+  width: 600px;
+  height: 250px;
+  max-width: 90vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 600px;
-  width: 100%;
 }
 
-.main-graphic img {
+/* Infinity arka plan shape */
+.infinity-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.infinity-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1.2) contrast(1.1) saturate(1.1);
+  mix-blend-mode: screen;
+  background: transparent;
+}
+
+/* Ortadaki animasyonlu noktalar */
+.infinity-dots {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 20px;
+  z-index: 3;
+  align-items: center;
+}
+
+.infinity-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.3;
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+  animation: infinityPulse 2.1s calc(var(--i) * 0.25s) infinite;
+}
+
+@keyframes infinityPulse {
+  0%, 25% { 
+    opacity: 0.3; 
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+  }
+  50% { 
+    opacity: 1; 
+    transform: scale(1.4);
+    box-shadow: 0 0 25px rgba(255,255,255,0.9);
+  }
+  75%, 100% { 
+    opacity: 0.3; 
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+  }
+}
+
+/* Sol ve sağ iconlar */
+.infinity-icon {
+  position: absolute;
+  width: 90px;
   height: auto;
-  max-width: 500px;
+  z-index: 2;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 15px rgba(139,92,246,0.4));
+}
+
+.infinity-icon--left {
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.infinity-icon--right {
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .neurocortex-description {
@@ -51,8 +132,42 @@
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
-  .main-graphic img {
-    max-width: 350px;
+/* Responsive */
+@media (max-width: 900px) {
+  .infinity-container {
+    width: 500px;
+    height: 200px;
+  }
+  .infinity-icon {
+    width: 70px;
+  }
+  .infinity-icon--left {
+    left: 40px;
+  }
+  .infinity-icon--right {
+    right: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .infinity-container {
+    width: 400px;
+    height: 150px;
+  }
+  .infinity-icon {
+    width: 60px;
+  }
+  .infinity-icon--left {
+    left: 30px;
+  }
+  .infinity-icon--right {
+    right: 30px;
+  }
+  .infinity-dots {
+    gap: 12px;
+  }
+  .infinity-dot {
+    width: 8px;
+    height: 8px;
   }
 } 

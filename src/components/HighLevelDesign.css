@@ -1,108 +1,122 @@
-.high-level-design {
+/* Yükseklik JS ile set ediliyor; arka plan burada */
+.horizontal-scroll-section {
   background: #000212;
   background-image: url('../../public/images/frames/Frame 7 - Background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 6rem 0;
   position: relative;
+}
+
+/* Sticky kapsayıcı: hem başlığı hem track'i tutar */
+.sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 85vh;                 /* daha büyük sticky alan */
+  overflow: hidden;
+  display: block;
+}
+
+/* Başlık: sticky sahnenin içinde, sabit kalır */
+.section-header-sticky {
+  position: absolute;
+  top: 0;
+  left: 0; right: 0;
+  text-align: center;
+  z-index: 2;
+  padding: 5.5rem 2rem 0;       /* üst nefes */
 }
 
 .section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 4.5rem;            /* ~72px */
+  line-height: 1.1;
+  font-weight: 600;
+  color: #F7F8F8;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
-
 .section-description {
-  font-size: 1.2rem;
+  font-size: 1.25rem;           /* ~20px */
   line-height: 1.6;
-  color: #cbd5e1;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 4rem;
+  color: #DADDF6;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
-.flowchart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 4rem;
+/* Track: başlığın altında başlayacak; offset JS ile hesaplanır */
+.horizontal-track {
   position: relative;
   z-index: 1;
-  flex-wrap: wrap;
-}
-
-.flow-step {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  padding: 0 3rem;
+  width: max-content;
+  will-change: transform;
+  transform: translateZ(0);
+  padding-top: var(--header-offset, 140px); /* başlık ile kartlar arası dar boşluk */
 }
 
-.step-box {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-  text-align: center;
-  min-width: 200px;
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-}
+/* Flow elemanları */
+.flow-element { flex-shrink: 0; }
 
-.step-box:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.3);
-}
-
-.step-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+.start-text, .end-text {
   color: #fff;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 16px;
+  text-wrap: nowrap;
 }
-
-.step-subtitle {
-  font-size: 0.9rem;
-  color: #8b5cf6;
-}
+.start-text h3, .end-text h3 { margin: 0; font-weight: 600; }
 
 .arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+  color: #8b5cf6;
+  font-size: 3rem;
+  margin: 0 16px;
+  text-wrap: nowrap;
 }
 
-.arrow svg {
-  animation: pulse 2s infinite;
+/* Kartlar – her ekranda overflow için responsive genişlik */
+.step-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: clamp(16px, 2.2vw, 32px);
+  text-align: center;
+  width: clamp(220px, 24vw, 320px);   /* <— kritik: her zaman yatayda taşma olsun */
+  margin: 0 clamp(12px, 1.2vw, 16px);
+  cursor: default;
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  backdrop-filter: blur(10px);
+}
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(139,92,246,0.2);
+  border-color: rgba(139,92,246,0.3);
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+.card-title {
+  font-size: clamp(18px, 1.4vw, 20px);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: .5rem;
+}
+.card-subtitle {
+  font-size: clamp(13px, 1.1vw, 16px);
+  color: #DADDF6;
 }
 
+/* Responsive dokunuşlar */
+@media (max-width: 1024px) {
+  .section-title { font-size: 3.4rem; }
+  .sticky-wrapper { height: 82vh; }
+}
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .flowchart {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .flow-step {
-    flex-direction: column;
-  }
-  
-  .arrow {
-    transform: rotate(90deg);
-  }
-} 
+  .section-header-sticky { padding-top: 3.5rem; }
+  .section-title { font-size: 2.2rem; }
+  .section-description { font-size: 1rem; }
+  .horizontal-track { padding: 0 1.25rem; }
+  .step-card { width: clamp(200px, 52vw, 260px); }
+  .arrow { font-size: 2rem; margin: 0 10px; }
+  .start-text, .end-text { font-size: 1.1rem; margin: 0 10px; }
+  .sticky-wrapper { height: 80vh; }
+}

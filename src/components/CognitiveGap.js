@@ -8,21 +8,23 @@ import './CognitiveGap.css';
 const CognitiveGap = () => {
   const cards = [
     {
-      image: '/images/frames/Background-1.png',
+      image: '/images/site görselleri efektli/1.PNG',
       title: 'Yavaş Öğrenme',
       description: 'Robotların yeni görevleri öğrenmesi haftalar veya aylar sürebilir ve genellikle yoğun insan müdahalesi gerektirir.'
     },
     {
-      image: '/images/frames/Background-2.png',
+      image: '/images/site görselleri efektli/2.PNG',
       title: 'Sınırlı Akıl Yürütme',
       description: 'Daha önce karşılaşılmamış durumlarla başa çıkma ve soyut komutları anlama konusunda zorluk yaşarlar.'
     },
     {
-      image: '/images/frames/Background-3.png',
+      image: '/images/site görselleri efektli/4.2.png',
       title: 'Bağlam Eksikliği',
       description: 'Fiziksel eylemleri, sosyal ipuçlarını ve dünyanın nedensel yapısını derinlemesine anlama yetenekleri kısıtlıdır.'
     }
   ];
+
+
 
   return (
     <section className="cognitive-gap" id="problem">
@@ -35,22 +37,12 @@ const CognitiveGap = () => {
         {/* Kartlar Grid Yapısı */}
         <div className="cards-grid">
           {cards.map((card, index) => (
-            // Background resmi üzerine yazı overlay
-            <div key={index} className="card-item">
-              
-              {/* Background Resmi */}
-              <img
-                src={card.image}
-                alt={card.title}
-                className="background-image"
-              />
-              
-              {/* Yazı Overlay - resmin alt kısmında */}
-              <div className="text-overlay">
-                <h3 className="card-title">{card.title}</h3>
-                <p className="card-description">{card.description}</p>
+            <div key={index} className="card">
+              <div className="card-icon">
+                <img src={card.image} alt={card.title} />
               </div>
-              
+              <h3 className="card-title">{card.title}</h3>
+              <p className="card-description">{card.description}</p>
             </div>
           ))}
         </div>
