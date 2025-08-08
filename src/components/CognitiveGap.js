@@ -18,7 +18,7 @@ const CognitiveGap = () => {
       description: 'Daha önce karşılaşılmamış durumlarla başa çıkma ve soyut komutları anlama konusunda zorluk yaşarlar.'
     },
     {
-      image: '/images/site görselleri efektli/4.2.png',
+      image: '/images/site görselleri efektli/3.png',
       title: 'Bağlam Eksikliği',
       description: 'Fiziksel eylemleri, sosyal ipuçlarını ve dünyanın nedensel yapısını derinlemesine anlama yetenekleri kısıtlıdır.'
     }

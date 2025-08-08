@@ -3,7 +3,7 @@ import './TechnologyStack.css';
 
 const TechnologyStack = () => {
   return (
-    <div className="technology-stack">
+    <div className="technology-stack" id="technology">
       <div className="container">
         <h1 className="section-title">Core Technology Stack</h1>
         <p className="section-description">
