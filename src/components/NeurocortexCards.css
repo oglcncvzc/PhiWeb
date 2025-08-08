@@ -77,8 +77,7 @@
 }
 
 .card-icon {
-  display: flex;
-  justify-content: center;
+  position: relative;
   margin-bottom: 1.5rem;
   width: 190px;
   height: 258px;
@@ -91,12 +90,30 @@
   width: 190px;
   height: 258px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   border-radius: 0;
-  opacity: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.card:hover .card-icon img {
+.card-icon-default {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-icon-hover {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.card:hover .card-icon-default {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.card:hover .card-icon-hover {
+  opacity: 1;
   transform: scale(1.1);
 }
 
