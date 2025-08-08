@@ -11,9 +11,9 @@ const TechnologyStack = () => {
         </p>
         
         <div className="technology-grid">
-          <div className="tech-card">
+          <div className="tech-card tech-card--large">
             <div className="card-image-container">
-              <img src="/images/Jetson thor.png" alt="NVIDIA Jetson Thor" className="card-image" />
+              <img src="/images/site görselleri efektli/7.png" alt="NVIDIA Jetson Thor" className="card-image" />
             </div>
             <div className="card-content">
               <h2 className="card-title">NVIDIA Jetson Thor</h2>
@@ -23,9 +23,9 @@ const TechnologyStack = () => {
             </div>
           </div>
 
-          <div className="tech-card">
+          <div className="tech-card tech-card--medium">
             <div className="card-image-container">
-              <img src="/images/isaacsim.png" alt="NVIDIA Isaac Sim / Omniverse" className="card-image" />
+              <img src="/images/site görselleri efektli/8.PNG" alt="NVIDIA Isaac Sim / Omniverse" className="card-image" />
             </div>
             <div className="card-content">
               <h2 className="card-title">NVIDIA Isaac Sim / Omniverse</h2>
@@ -35,26 +35,26 @@ const TechnologyStack = () => {
             </div>
           </div>
 
-          <div className="tech-card">
+          <div className="tech-card tech-card--tall">
             <div className="card-image-container">
-              <img src="/images/isaacperceptor.png" alt="NVIDIA Isaac Perceptor" className="card-image" />
-            </div>
-            <div className="card-content">
-              <h2 className="card-title">NVIDIA Isaac Perceptor</h2>
-              <p className="card-description">
-                Provides foundational libraries for 3D perception, sensor fusion, and SLAM, leveraged by the Perception Engine.
-              </p>
-            </div>
-          </div>
-
-          <div className="tech-card">
-            <div className="card-image-container">
-              <img src="/images/icon-2.png" alt="Project Gr00t Foundation Model" className="card-image" />
+              <img src="/images/site görselleri efektli/11.PNG" alt="Project Gr00t Foundation Model" className="card-image" />
             </div>
             <div className="card-content">
               <h2 className="card-title">Project Gr00t Foundation Model</h2>
               <p className="card-description">
                 Provides the baseline motor skills and physical interaction capabilities upon which the Action Generation Engine builds.
+              </p>
+            </div>
+          </div>
+
+          <div className="tech-card tech-card--small">
+            <div className="card-image-container">
+              <img src="/images/site görselleri efektli/9.PNG" alt="NVIDIA Isaac Perceptor" className="card-image" />
+            </div>
+            <div className="card-content">
+              <h2 className="card-title">NVIDIA Isaac Perceptor</h2>
+              <p className="card-description">
+                Provides foundational libraries for 3D perception, sensor fusion, and SLAM, leveraged by the Perception Engine.
               </p>
             </div>
           </div>
