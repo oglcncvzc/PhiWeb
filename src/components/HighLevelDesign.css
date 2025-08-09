@@ -12,7 +12,7 @@
 .sticky-wrapper {
   position: sticky;
   top: 0;
-  height: 85vh;                 /* daha büyük sticky alan */
+  height: 45vh;                 /* daha büyük sticky alan */
   overflow: hidden;
   display: block;
 }

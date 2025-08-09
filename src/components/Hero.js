@@ -83,7 +83,7 @@ const Hero = () => {
             </div>
           )}
           <Spline
-            scene="https://prod.spline.design/GgD1TFUq7BbAzssi/scene.splinecode"
+            scene="https://prod.spline.design/fP0LH65i8bXQDQjZ/scene.splinecode"
             onLoad={() => setSplineLoaded(true)}
             style={{ display: splineLoaded ? 'block' : 'none' }}
           />
