@@ -1,8 +1,21 @@
 .footer {
   background: #000000;
-  padding: 4rem 10rem 10rem;
+  padding: 4rem 10rem 4rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
+}
+
+/* Üst kısma yumuşak geçiş */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, #000212 0%, rgba(0, 2, 18, 0.7) 30%, rgba(0, 2, 18, 0.3) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .container {

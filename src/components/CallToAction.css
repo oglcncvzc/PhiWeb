@@ -8,6 +8,32 @@
   position: relative;
 }
 
+/* Üst kısma yumuşak geçiş */
+.call-to-action::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, #000212 0%, rgba(0, 2, 18, 0.7) 30%, rgba(0, 2, 18, 0.3) 70%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Alt kısma yumuşak geçiş */
+.call-to-action::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 2, 18, 0.3) 30%, rgba(0, 2, 18, 0.7) 70%, #000000 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .cta-content {
   text-align: center;
   position: relative;

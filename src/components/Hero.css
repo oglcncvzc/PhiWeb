@@ -16,6 +16,19 @@ body, html, #root {
   background-repeat: no-repeat;
 }
 
+/* Alt kısma yumuşak geçiş */
+.hero-scroll-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 2, 18, 0.3) 30%, rgba(0, 2, 18, 0.7) 70%, #000212 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
 /* Sticky wrapper - içeriği sabit tutar */
 .hero-sticky-wrapper {
   position: sticky;
