@@ -34,7 +34,7 @@ const Hero = () => {
 
       <div
         className="robot-container"
-        style={{ transform: `translateY(${-offsetY * 4.5}px)` }}
+        style={{ transform: `translateY(${-offsetY * 1.0}px)` }}
       >
         {!splineLoaded && (
           <div className="robot-placeholder">
