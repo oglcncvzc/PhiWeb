@@ -23,7 +23,7 @@ const HighLevelDesign = () => {
       const trackW = trackRef.current.scrollWidth;
       const containerW = wrapperRef.current?.clientWidth || window.innerWidth;
       const needsHorizontalScroll = trackW > containerW;
-      const vh = needsHorizontalScroll ? 120 : 80; // görünür alan konteyner genişliğine göre
+      const vh = needsHorizontalScroll ? 150 : 80; // Daha uzun scroll mesafesi (daha yavaş)
       sectionRef.current.style.height = `${vh}vh`;
     };
 
@@ -54,7 +54,8 @@ const HighLevelDesign = () => {
       }
 
       const scrollPercentage = scrollAmount / scrollableHeight;
-      const translateX = -(scrollPercentage * horizontalScrollDistance);
+      const scrollMultiplier = 0.7; // Scroll hızını %70'e düşür (daha yavaş)
+      const translateX = -(scrollPercentage * horizontalScrollDistance * scrollMultiplier);
       trackRef.current.style.transform = `translateX(${translateX}px)`;
     };
 

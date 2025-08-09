@@ -111,12 +111,24 @@
   .sticky-wrapper { height: 82vh; }
 }
 @media (max-width: 768px) {
-  .section-header-sticky { padding-top: 3.5rem; }
+  .sticky-wrapper { 
+    top: 50px; /* Tek sıra header için daha az */
+    height: calc(100vh - 50px); /* Tam ekran - header yüksekliği */
+  }
+  .section-header-sticky { 
+    padding-top: 1.5rem; /* Daha az padding */
+    position: absolute;
+    top: 0;
+    left: 0; 
+    right: 0;
+  }
   .section-title { font-size: 2.2rem; }
   .section-description { font-size: 1rem; }
-  .horizontal-track { padding: 0 1.25rem; }
+  .horizontal-track { 
+    padding: 0 1.25rem;
+    padding-top: 250px; /* Mobilde daha fazla padding - başlığın altına itmek için */
+  }
   .step-card { width: clamp(200px, 52vw, 260px); }
   .arrow { font-size: 2rem; margin: 0 10px; }
   .start-text, .end-text { font-size: 1.1rem; margin: 0 10px; }
-  .sticky-wrapper { height: 80vh; }
 }

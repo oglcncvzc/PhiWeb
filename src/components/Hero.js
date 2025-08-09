@@ -5,29 +5,38 @@ import './Hero.css';
 const Hero = () => {
   const [offsetY, setOffsetY] = useState(0);
   const [splineLoaded, setSplineLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const heroSectionRef = useRef(null);
   const stickyWrapperRef = useRef(null);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
     const handleScroll = () => {
       const scrollY = window.pageYOffset;
       setOffsetY(scrollY);
       
-      // Hero section'ın yüksekliğini dinamik olarak ayarla
+      // Hero section'ın yüksekliğini mobil/desktop'a göre ayarla
       if (heroSectionRef.current) {
         const vh = window.innerHeight;
-        heroSectionRef.current.style.height = `${vh * 2.9}px`; // 3 ekran yüksekliği
+        const heightMultiplier = window.innerWidth < 768 ? 2.0 : 2.9; // Mobilde daha kısa
+        heroSectionRef.current.style.height = `${vh * heightMultiplier}px`;
       }
     };
     
     const handleResize = () => {
+      checkMobile();
       if (heroSectionRef.current) {
         const vh = window.innerHeight;
-        heroSectionRef.current.style.height = `${vh * 3}px`;
+        const heightMultiplier = window.innerWidth < 768 ? 2.0 : 2.9;
+        heroSectionRef.current.style.height = `${vh * heightMultiplier}px`;
       }
     };
     
     // İlk yüklemede de çalıştır
+    checkMobile();
     handleScroll();
     handleResize();
     
@@ -63,7 +72,7 @@ const Hero = () => {
         <div
           className="robot-container"
           style={{ 
-            transform: `translateY(${Math.min(-offsetY * 0.25, 0)}px)`,
+            transform: `translateY(${Math.min(-offsetY * (isMobile ? 0.4 : 0.25), 0)}px)`,
             transition: 'transform 0.1s ease-out'
           }}
         >

@@ -173,12 +173,14 @@ body, html, #root {
 @media (max-width: 768px) {
   .hero {
     padding: 0 0.5rem;
+    padding-top: 60px; /* Tek sıra header için daha az */
   }
   
   .hero h1 {
     font-size: 48px;
     line-height: 48px;
     letter-spacing: -1.2px;
+    padding-top: 20px; /* Mobilde daha az padding */
   }
   
   .subtitle {
