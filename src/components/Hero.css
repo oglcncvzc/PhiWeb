@@ -44,6 +44,7 @@ body, html, #root {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  pointer-events: none; /* Yazıların mouse etkileşimini kapat */
 }
 
 .hero h1 {
@@ -106,6 +107,7 @@ body, html, #root {
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  pointer-events: auto; /* Butonları tıklanabilir yap */
 }
 
 .btn-primary:hover {
@@ -123,6 +125,7 @@ body, html, #root {
   font-size: 1rem;
   font-weight: 600;
   transition: all 0.3s ease;
+  pointer-events: auto; /* Butonları tıklanabilir yap */
 }
 
 .btn-outline:hover {
